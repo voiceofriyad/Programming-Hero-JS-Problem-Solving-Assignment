@@ -85,6 +85,7 @@ function tinyFriend(friends) {
             }
         }
     }
+    
     return min;
 }
 
