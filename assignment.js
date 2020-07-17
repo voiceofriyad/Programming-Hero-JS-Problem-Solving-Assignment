@@ -69,17 +69,25 @@ console.log(buildingBricks);
 
 //Problem No: 4 # Finding TinyFriend
 
-function tinyFriend(numbers){
-    var tiny =numbers[0];
-    for(var i=0; i<numbers.length; i++){
-        var fList = numbers[i];
-        if(fList.length < tiny.length){
-        tiny = fList;
+function tinyFriend(friends) {
+    if (!friends.length) {
+        console.log("Maybe it's your mistake. Empty value never smallest or biggest.");
+    } else {
+        var min = friends[0];
+        for (var i = 0; i < friends.length; i++) {
+            var element = friends[i];
+            if (!element.length) {
+                console.log('Sorry! You entered a blank element in your friend list. Please check & try again');
+            } else {
+                if (element.length < min.length) {
+                    min = element;
+                }
+            }
         }
     }
-    return tiny;
+    return min;
 }
-   
+
 var friendsList = ['Riyad', 'Faysal', 'Alam', 'Rakib', 'Rahat', 'Raju'];
 var checkTiny = tinyFriend(friendsList);
 console.log(checkTiny);
